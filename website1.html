@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt – Projekt.io</title>
+    <!-- Verknüpfung zur selben zentralen CSS-Datei -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION (Identisch zur Startseite) -->
+    <!-- Platzhalter für das Menü -->
+<header id="header-placeholder"></header>
+
+<!-- Skript, das die nav.html automatisch lädt -->
+<script>
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+</script>
+
+
+    <!-- INHALT DER KONTAKTSEITE -->
+    <main>
+        <section class="hero">
+            <h1>Lass von dir hören. 📬</h1>
+            <p class="subtitle">Du hast Fragen zu meinem Projekt oder möchtest dich austauschen? Nimm gerne Kontakt auf.</p>
+        </section>
+
+        <div class="card-grid">
+            <div class="step">
+                <h3>Direkter Weg</h3>
+                <p>Du erreichst mich am besten per E-Mail oder über meine Kanäle:</p>
+                <ul class="step-list">
+                    <li>a</li>
+                    <li>b</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <a href="index.html" style="color: #111; text-decoration: none; font-weight: 500;">&larr; Zurück zur Startseite</a>
+        </div>
+    </main>
+
+</body>
+</html>
