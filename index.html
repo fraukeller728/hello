@@ -3,32 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine erste Webseite mit GitHub Pages – Die komplette Anleitung</title>
+    <title>Meine erste Webseite mit GitHub Pages – Mit Menüband</title>
     <style>
+        /* CSS RESET & GRUNDLAGE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             background-color: #f4f4f9;
             color: #333;
+            padding-top: 80px; /* Platzhalter, damit der fixierte Header Inhalte nicht verdeckt */
+        }
+
+        /* 1. DAS MENÜBAND (HEADER & NAVIGATION) */
+        header {
+            background-color: #24292e; /* GitHub-dunkelgrau */
+            position: fixed;           /* Bleibt beim Scrollen oben kleben */
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        nav {
             max-width: 900px;
-            margin: 40px auto;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between; /* Verteilt Logo links & Links rechts */
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none; /* Entfernt die Aufzählungspunkte */
+            display: flex;    /* Ordnet die Menüpunkte nebeneinander an */
+            gap: 20px;        /* Abstand zwischen den Links */
+        }
+
+        .nav-links a {
+            color: #c9d1d9;
+            text-decoration: none; /* Entfernt den Unterstrich */
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        /* Hover-Effekt: Farbe ändert sich, wenn man mit der Maus drüberfährt */
+        .nav-links a:hover {
+            color: #58a6ff;
+        }
+
+        /* 2. HAUPTINHALT (ANLEITUNG) */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
             padding: 20px;
         }
+
         h1 {
             color: #0366d6;
             text-align: center;
+            margin-bottom: 10px;
         }
+
         .subtitle {
             text-align: center;
             color: #586069;
             margin-bottom: 40px;
         }
+
         h2 {
             color: #24292e;
             border-bottom: 2px solid #eaecef;
             padding-bottom: 5px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
+
         .step {
             background: #fff;
             padding: 20px 25px;
@@ -36,10 +98,12 @@
             border-radius: 6px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
+
         .step h3 {
             margin-top: 0;
             color: #0366d6;
         }
+
         code {
             background: #e1e4e8;
             padding: 2px 6px;
@@ -47,66 +111,84 @@
             font-size: 0.9em;
             font-family: monospace;
         }
-        ul {
+
+        ul.step-list {
             padding-left: 20px;
         }
-        li {
+
+        ul.step-list li {
             margin-bottom: 8px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Hallo Welt! 🚀</h1>
-    <p class="subtitle">Meine erste eigene Webseite läuft erfolgreich über GitHub Pages.</p>
+    <!-- MENÜBAND START -->
+    <header>
+        <nav>
+            <a href="#" class="logo">🚀 MeinProjekt</a>
+            <ul class="nav-links">
+                <li><a href="#schritt1">Schritt 1</a></li>
+                <li><a href="#schritt2">Schritt 2</a></li>
+                <li><a href="#schritt3">Schritt 3</a></li>
+                <li><a href="#schritt4">Schritt 4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- MENÜBAND ENDE -->
 
-    <h2>Ausführliche Dokumentation: Wie ich meine Webseite erstellt habe</h2>
+    <main>
+        <h1>Hallo Welt! 🚀</h1>
+        <p class="subtitle">Meine erste eigene Webseite läuft erfolgreich über GitHub Pages.</p>
 
-    <div class="step">
-        <h3>Schritt 1: GitHub-Konto erstellen</h3>
-        <p>Der erste Schritt, um Teil der Entwickler-Welt zu werden:</p>
-        <ul>
-            <li>Gehe auf <a href="https://github.com/" target="_blank">github.com</a>.</li>
-            <li>Klicke oben rechts auf <strong>Sign up</strong> (Registrieren) und folge den Anweisungen, um deinen Account anzulegen. Du brauchst dafür nur eine E-Mail-Adresse und ein Passwort.</li>
-        </ul>
-    </div>
+        <h2>Ausführliche Dokumentation: Wie ich meine Webseite erstellt habe</h2>
 
-    <div class="step">
-        <h3>Schritt 2: Ein neues Repository (Projekt) erstellen & öffentlich machen</h3>
-        <p>Ein <em>Repository</em> (oder kurz Repo) ist der zentrale Ordner auf GitHub, in dem alle Dateien deiner Webseite liegen.</p>
-        <ul>
-            <li>Logge dich bei GitHub ein und klicke oben rechts auf das Plus-Zeichen (<code>+</code>), dann auf <strong>New repository</strong>.</li>
-            <li>Gib deinem Repository einen Namen (z. B. <code>meine-erste-webseite</code>).</li>
-            <li><strong>Wichtig für GitHub Pages:</strong> Das Repository muss als <strong>Public</strong> (Öffentlich) eingestellt sein, damit die Webseite im Internet für alle erreichbar ist.</li>
-            <li><em>Falls du es versehentlich auf Privat gestellt hast:</em> Keine Panik! Du kannst das jederzeit ändern, indem du in deinem Repository auf <strong>Settings</strong> klickst, links unten auf <strong>General</strong> gehst, ganz nach unten zur <em>Danger Zone</em> scrollst und dort bei <em>Change repository visibility</em> auf <strong>Change visibility</strong> (Make public) klickst.</li>
-            <li>Setze einen Haken bei <strong>Add a README file</strong>, damit das Projekt direkt initialisiert wird, und klicke auf <strong>Create repository</strong>.</li>
-        </ul>
-    </div>
+        <div class="step" id="schritt1">
+            <h3>Schritt 1: GitHub-Konto erstellen</h3>
+            <p>Der erste Schritt, um Teil der Entwickler-Welt zu werden:</p>
+            <ul class="step-list">
+                <li>Gehe auf <a href="https://github.com/" target="_blank">github.com</a>.</li>
+                <li>Klicke oben rechts auf <strong>Sign up</strong> (Registrieren) und folge den Anweisungen, um deinen Account anzulegen. Du brauchst dafür nur eine E-Mail-Adresse und ein Passwort.</li>
+            </ul>
+        </div>
 
-    <div class="step">
-        <h3>Schritt 3: Deine erste HTML-Datei hinzufügen</h3>
-        <p>Damit der Browser weiß, was er anzeigen soll, braucht das Projekt eine Startseite:</p>
-        <ul>
-            <li>Klicke in deinem Repository auf den Button <strong>Add file</strong> und wähle <strong>Create new file</strong>.</li>
-            <li>Trage oben als Dateinamen exakt <strong><code>index.html</code></strong> ein. (Dieser Name ist essenziell, da GitHub Pages ihn automatisch als Einstiegspunkt erkennt).</li>
-            <li>Füge den HTML-Code ein (so wie diesen hier, der die Seite strukturiert und gestaltet).</li>
-            <li>Klicke rechts oben auf <strong>Commit changes...</strong> und bestätige das Pop-up, um die Datei abzuspeichern.</li>
-        </ul>
-    </div>
+        <div class="step" id="schritt2">
+            <h3>Schritt 2: Ein neues Repository (Projekt) erstellen & öffentlich machen</h3>
+            <p>Ein <em>Repository</em> (oder kurz Repo) ist der zentrale Ordner auf GitHub, in dem alle Dateien deiner Webseite liegen.</p>
+            <ul class="step-list">
+                <li>Logge dich bei GitHub ein und klicke oben rechts auf das Plus-Zeichen (<code>+</code>), dann auf <strong>New repository</strong>.</li>
+                <li>Gib deinem Repository einen Namen (z. B. <code>meine-erste-webseite</code>).</li>
+                <li><strong>Wichtig für GitHub Pages:</strong> Das Repository muss als <strong>Public</strong> (Öffentlich) eingestellt sein, damit die Webseite im Internet für alle erreichbar ist.</li>
+                <li><em>Falls du es versehentlich auf Privat gestellt hast:</em> Keine Panik! Du kannst das jederzeit ändern, indem du in deinem Repository auf <strong>Settings</strong> klickst, links unten auf <strong>General</strong> gehst, ganz nach unten zur <em>Danger Zone</em> scrollst und dort bei <em>Change repository visibility</em> auf <strong>Change visibility</strong> (Make public) klickst.</li>
+                <li>Setze einen Haken bei <strong>Add a README file</strong>, damit das Projekt direkt initialisiert wird, und klicke auf <strong>Create repository</strong>.</li>
+            </ul>
+        </div>
 
-    <div class="step">
-        <h3>Schritt 4: GitHub Pages aktivieren (Die Magie!)</h3>
-        <p>Jetzt muss GitHub nur noch bescheid geben, dass aus diesen Dateien eine echte Live-Webseite im Netz werden soll:</p>
-        <ul>
-            <li>Klicke ganz oben in deinem Repository auf den Reiter <strong>Settings</strong> (Einstellungen).</li>
-            <li>Scrolle in der linken Menüleiste nach unten zum Bereich <em>Code and automation</em> und klicke auf <strong>Pages</strong>.</li>
-            <li>Suche nach dem Abschnitt <strong>Build and deployment</strong> &gt; <strong>Branch</strong>.</li>
-            <li>Stelle das Dropdown-Menü von <em>None</em> auf <strong>main</strong> um.</li>
-            <li>Der Ordner daneben bleibt standardmäßig auf <code>/ (root)</code>.</li>
-            <li>Klicke auf <strong>Save</strong>.</li>
-        </ul>
-        <p>Nach ein bis zwei Minuten ist deine Seite im Internet erreichbar! GitHub zeigt dir den Link (die URL) direkt ganz oben im Pages-Bereich an.</p>
-    </div>
+        <div class="step" id="schritt3">
+            <h3>Schritt 3: Deine erste HTML-Datei hinzufügen</h3>
+            <p>Damit der Browser weiß, was er anzeigen soll, braucht das Projekt eine Startseite:</p>
+            <ul class="step-list">
+                <li>Klicke in deinem Repository auf den Button <strong>Add file</strong> und wähle <strong>Create new file</strong>.</li>
+                <li>Trage oben als Dateinamen exakt <strong><code>index.html</code></strong> ein. (Dieser Name ist essenziell, da GitHub Pages ihn automatisch als Einstiegspunkt erkennt).</li>
+                <li>Füge den HTML-Code ein (so wie diesen hier, der die Seite strukturiert und gestaltet).</li>
+                <li>Klicke rechts oben auf <strong>Commit changes...</strong> und bestätige das Pop-up, um die Datei abzuspeichern.</li>
+            </ul>
+        </div>
+
+        <div class="step" id="schritt4">
+            <h3>Schritt 4: GitHub Pages aktivieren (Die Magie!)</h3>
+            <p>Jetzt muss GitHub nur noch Bescheid geben, dass aus diesen Dateien eine echte Live-Webseite im Netz werden soll:</p>
+            <ul class="step-list">
+                <li>Klicke ganz oben in deinem Repository auf den Reiter <strong>Settings</strong> (Einstellungen).</li>
+                <li>Scrolle in der linken Menüleiste nach unten zum Bereich <em>Code and automation</em> und klicke auf <strong>Pages</strong>.</li>
+                <li>Suche nach dem Abschnitt <strong>Build and deployment</strong> &gt; <strong>Branch</strong>.</li>
+                <li>Stelle das Dropdown-Menü von <em>None</em> auf <strong>main</strong> um.</li>
+                <li>Der Ordner daneben bleibt standardmäßig auf <code>/ (root)</code>.</li>
+                <li>Klicke auf <strong>Save</strong>.</li>
+            </ul>
+            <p style="margin-top: 10px;">Nach ein bis zwei Minuten ist deine Seite im Internet erreichbar! GitHub zeigt dir den Link (die URL) direkt ganz oben im Pages-Bereich an.</p>
+        </div>
+    </main>
 
 </body>
 </html>
