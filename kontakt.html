@@ -10,16 +10,18 @@
 <body>
 
     <!-- HEADER / NAVIGATION (Identisch zur Startseite) -->
-    <header>
-        <nav>
-            <a href="index.html" class="logo">Projekt.io</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Überblick</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="kontakt.html" class="btn-primary">Loslegen</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Platzhalter für das Menü -->
+<header id="header-placeholder"></header>
+
+<!-- Skript, das die nav.html automatisch lädt -->
+<script>
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+</script>
+
 
     <!-- INHALT DER KONTAKTSEITE -->
     <main>
