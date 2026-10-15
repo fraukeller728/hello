@@ -3,31 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt – Meine erste Webseite</title>
-    <!-- Externe CSS-Datei einbinden -->
+    <title>Kontakt – Projekt.io</title>
+    <!-- Verknüpfung zur selben zentralen CSS-Datei -->
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- Das gleiche Menüband, damit man zurückkommt -->
+    <!-- HEADER / NAVIGATION (Identisch zur Startseite) -->
     <header>
         <nav>
-            <a href="index.html" class="logo">🚀 MeinProjekt</a>
+            <a href="index.html" class="logo">Projekt.io</a>
             <ul class="nav-links">
-                <li><a href="index.html">Startseite</a></li>
+                <li><a href="index.html">Überblick</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="kontakt.html" class="btn-primary">Loslegen</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- INHALT DER KONTAKTSEITE -->
     <main>
-        <div class="box">
-            <h1>Kontakt</h1>
-            <p>Hier könntest du später deine E-Mail-Adresse, ein Kontaktformular oder Links zu deinen Social-Media-Profilen einfügen.</p>
-            <p style="margin-top: 15px;">
-                <a href="index.html">&larr; Zurück zur Startseite</a>
-            </p>
+        <section class="hero">
+            <h1>Lass von dir hören. 📬</h1>
+            <p class="subtitle">Du hast Fragen zu meinem Projekt oder möchtest dich austauschen? Nimm gerne Kontakt auf.</p>
+        </section>
+
+        <div class="card-grid">
+            <div class="step">
+                <h3>Direkter Weg</h3>
+                <p>Du erreichst mich am besten per E-Mail oder über meine Kanäle:</p>
+                <ul class="step-list">
+                    <li>E-Mail: <code>deine-email@example.com</code></li>
+                    <li>GitHub: <a href="https://github.com/" target="_blank">Dein Profil</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <a href="index.html" style="color: #111; text-decoration: none; font-weight: 500;">&larr; Zurück zur Startseite</a>
         </div>
     </main>
 
